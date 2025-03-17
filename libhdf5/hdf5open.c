@@ -810,12 +810,12 @@ nc4_open_file(const char *path, int mode, void* parameters, int ncid)
         }
     }
 
-#ifdef HDF5_HAS_COLL_METADATA_OPS
-    /* If collective metadata operations are available in HDF5, turn
-     * them on. */
-    if (H5Pset_all_coll_metadata_ops(fapl_id, 1) < 0)
-        BAIL(NC_EPARINIT);
-#endif /* HDF5_HAS_COLL_METADATA_OPS */
+// #ifdef HDF5_HAS_COLL_METADATA_OPS
+//     /* If collective metadata operations are available in HDF5, turn
+//      * them on. */
+//     if (H5Pset_all_coll_metadata_ops(fapl_id, 1) < 0)
+//         BAIL(NC_EPARINIT);
+// #endif /* HDF5_HAS_COLL_METADATA_OPS */
 #endif /* USE_PARALLEL4 */
 
     /* Only set cache for non-parallel opens. */

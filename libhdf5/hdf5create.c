@@ -198,14 +198,14 @@ nc4_create_file(const char *path, int cmode, size_t initialsz,
 					       H5P_CRT_ORDER_INDEXED)) < 0)
         BAIL(NC_EHDFERR);
     }
-#ifdef HDF5_HAS_COLL_METADATA_OPS
-    /* If HDF5 supports collective metadata operations, turn them
-     * on. This is only relevant for parallel I/O builds of HDF5. */
-    if (H5Pset_all_coll_metadata_ops(fapl_id, 1) < 0)
-        BAIL(NC_EHDFERR);
-    if (H5Pset_coll_metadata_write(fapl_id, 1) < 0)
-        BAIL(NC_EHDFERR);
-#endif
+// #ifdef HDF5_HAS_COLL_METADATA_OPS
+//     /* If HDF5 supports collective metadata operations, turn them
+//      * on. This is only relevant for parallel I/O builds of HDF5. */
+//     if (H5Pset_all_coll_metadata_ops(fapl_id, 1) < 0)
+//         BAIL(NC_EHDFERR);
+//     if (H5Pset_coll_metadata_write(fapl_id, 1) < 0)
+//         BAIL(NC_EHDFERR);
+// #endif
 
     if (cmode & NC_NODIMSCALE_ATTACH) {
       /* See https://github.com/Unidata/netcdf-c/issues/2128 */
